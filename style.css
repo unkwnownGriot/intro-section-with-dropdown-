@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(0, 0%, 41%);
+    padding: 1em;
+}
+
+.menuContainer{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.LeftMenu{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.LeftMenu li {
+    list-style: none;
+}
+.LeftMenu li a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 5px 20px;
+}
+
+.has-dropdown{
+    position: relative;
+}
+
+.submenu{
+    position: absolute;
+    white-space: nowrap;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.submenu2{
+    position: absolute;
+    white-space: nowrap;
+    right: -.9em;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.LeftMenu>li:hover>a, .submenu>li:hover>a,.submenu2>li:hover>a,.rightMenu>span:hover{
+    color: #000;
+}
+
+.LeftMenu > li:hover>a +.submenu,.LeftMenu > li:hover>a +.submenu2 {
+    opacity: 1;
+}
+
+.rightMenu>span{
+   cursor: pointer;
+}
+
+.registerBtn{
+    border: 1px solid hsl(0, 0%, 41%);
+    background: transparent;
+    padding: 0.4em 0.7em;
+    border-radius: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.registerBtn:hover{
+    border: 1px solid #000;
+}
+
+.show_menu{
+    display: none;
+}
+
+
+
+.wrapper{
+    display: flex;
+    padding: 3.5em;
+}
+.left{
+    flex: 2;
+   
+}
+.Lbottom{
+    width: 70%;
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 600;
+    margin-top: .7em;
+}
+
+p{
+    font-size: 18px;
+    margin: 20px 0px;
+}
+ .LBtn{
+    background-color: #000;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #000;
+ }
+
+ .LBtn:hover{
+    background-color: #fff;
+    color: #000;
+   
+ }
+
+ .Lfooter{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 50px;
+ }
+.right{
+    flex: 1;
+    height: 70vh;
+}
+
+.rightImg{
+    width: 100%;
+}
+
+
+@media (max-width:1020px){
+    .title{
+        font-size: 60px;
+    }
+}
+
+@media (max-width:900px){
+    .Lfooter{
+        width: 100%;
+    }
+    .title{
+        font-size: 50px;
+        margin-top: 1.5em;
+    }
+    .wrapper{
+        padding: 2em;
+    }
+}
+
+@media (max-width:828px){
+    .title{
+        font-weight: 600;
+        font-size: 50px;
+    }
+}
+
+@media (max-width:755px){
+    .wrapper{
+        padding: 2em;
+    }
+    .title{
+        font-size: 40px;
+        margin-top: 1.8em;
+    }
+    .right{
+        flex: 2;
+    }
+    .left{
+        flex: 1;
+    }
+    p{
+        font-size: 16px;
+    }
+    .Lbottom{
+        width: 90%;
+    }
+  
+}
+
+@media(max-width:690px){
+    .wrapper{
+        padding: 1.5em;
+    }
+    
+    .title{
+        margin-top: 1.9em;
+    }
+   
+    ul>li>a{
+        font-size: 14px;
+    }
+    .LeftMenu li a{
+        padding: 5px 10px;
+    }
+    
+
+}
+
+@media(max-width:650px){
+    .wrapper{
+        padding: 1em;
+    }
+    nav{
+        padding: 0.7em 1em;
+    }
+    .title{
+        margin-top: 2.4em;
+    }
+    .right{
+        flex: 1;
+    }
+    .Lfooter{
+       flex-wrap: wrap;
+    }
+}
+
+@media(max-width:616px){
+  .wrapper{
+    flex-direction: column-reverse;
+  }
+.hamburger{
+    width: 2em;
+    height: 0.25em;
+    display: block;
+    background-color: #000;
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .hamburger::after, .hamburger::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: inherit;
+    width: inherit;
+    height: inherit;
+    transition: 0.2s transform ease-in-out;
+  }
+
+  .hamburger::after{
+    top: 0.6em;
+  }
+  .hamburger::before{
+    bottom: 0.6em;
+  }
+  .hamburger::after{
+    top: 0.6em;
+  }
+
+  .close::after, .close::before{
+    top: 0;
+  }
+
+  .close{
+    transform: rotate(45deg);
+  }
+
+  .close::after{
+    transform: rotate(-90deg);
+  }
+  
+  .menuContainer{
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    background-color: #fff;
+    height: 100%;
+    width: 50%;
+    padding: 0px 10px;
+    transition: 1s right ease-in-out;
+  }
+
+  .menuContainer.open{
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    background-color: #fff;
+    height: 100%;
+    width: 50%;
+    padding: 0px 10px;
+  }
+
+  .LeftMenu > li {
+    margin: 10px 0px;
+  }
+
+  .LeftMenu > li:hover>a +.submenu,.LeftMenu > li:hover>a +.submenu2{
+    position: relative;
+}
+
+  .submenu{
+    left: 20px;
+    top: 0;
+    box-shadow: none;
+  }
+  .submenu2{
+    left: 20px;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .rightMenu{
+    display: flex;
+    position: relative;
+    top: -20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .LeftMenu{
+    flex-direction: column;
+  }
+  .title{
+    margin-top: 0;
+    white-space: nowrap;
+  }
+ .registerBtn{
+    width: 80%;
+ }
+
+  .Lbottom{
+    width: 100%;
+    text-align: center;
+  }
+  
+}
+
+@media (max-width:404px){
+    .title{
+        font-weight: 400;
+        font-size: 40px;
+    }
+}
+@media (max-width:380px){
+    .title{
+        font-weight: 400;
+        font-size: 35px;
+    }
+}
+@media (max-width:340px){
+    .title{
+        font-weight: 400;
+        font-size: 30px;
+    }
+}
+
